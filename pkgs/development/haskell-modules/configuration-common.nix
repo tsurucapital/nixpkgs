@@ -695,8 +695,8 @@ self: super: {
   jsaddle = dontCheck super.jsaddle;
 
   # Tools that use gtk2hs-buildtools now depend on them in a custom-setup stanza
-  cairo = addBuildTool super.cairo self.buildHaskellPackages.gtk2hs-buildtools;
-  pango = disableHardening (addBuildTool super.pango self.buildHaskellPackages.gtk2hs-buildtools) ["fortify"];
+  # cairo = addBuildTool super.cairo self.buildHaskellPackages.gtk2hs-buildtools;
+  # pango = disableHardening (addBuildTool super.pango self.buildHaskellPackages.gtk2hs-buildtools) ["fortify"];
   gtk =
     if pkgs.stdenv.isDarwin
     then appendConfigureFlag super.gtk "-fhave-quartz-gtk"
